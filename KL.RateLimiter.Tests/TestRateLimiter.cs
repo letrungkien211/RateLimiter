@@ -43,7 +43,8 @@ namespace KL.RateLimiter.Tests
 
             TestOutputHelper.WriteLine($"{passed}, {total}, Rate={passed / total}");
 
-            Assert.Equal(limit * times, passed);
+            Assert.True(limit * times + 1 >= passed);
+            Assert.True(limit * times - 1 <= passed);
         }
     }
 }
