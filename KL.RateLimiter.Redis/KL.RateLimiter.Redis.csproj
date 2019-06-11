@@ -3,6 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>KL.RateLimiter</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>letrungkien211</Authors>
+    <Company />
+    <Description>
+      Support redis queue for rate limiter.
+    </Description>
+    <Copyright />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/letrungkien211/RateLimiter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/letrungkien211/RateLimiter</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>rate,limit,api</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
