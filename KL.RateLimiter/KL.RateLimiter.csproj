@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>letrungkien211</Authors>
+    <Company />
+    <Description>This package supports in memory rate limiter.
+Use KL.RateLimiter.Redis for distributed environment.
+</Description>
+    <Copyright />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/letrungkien211/RateLimiter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/letrungkien211/RateLimiter</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>rate,limit,api</PackageTags>
+  </PropertyGroup>
+
+</Project>
