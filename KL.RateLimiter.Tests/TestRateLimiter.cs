@@ -14,13 +14,19 @@ namespace KL.RateLimiter.Tests
             TestOutputHelper = testOutputHelper;
         }
         [Theory]
-        [InlineData(1000, 10, 5)]
-        [InlineData(2000, 20, 2)]
-        [InlineData(3000, 5, 3)]
-        [InlineData(5000, 40, 2)]
-        public async Task Rate(int window, int limit, int times)
+        [InlineData(0, 1000, 10, 5)]
+        [InlineData(0, 2000, 20, 2)]
+        [InlineData(0, 3000, 5, 3)]
+        [InlineData(0, 5000, 40, 2)]
+
+        [InlineData(1, 1000, 10, 5)]
+        [InlineData(1, 2000, 20, 2)]
+        [InlineData(1, 3000, 5, 3)]
+        [InlineData(1, 5000, 40, 2)]
+
+        public async Task Rate(int queueType, int window, int limit, int times)
         {
-            var limiter = new RateLimiter().UseDefaultQueue();
+            var limiter = queueType == 1 ? new RateLimiter().UseDefaultQueue() : new RateLimiter().UseRedisQueue(StackExchange.Redis.ConnectionMultiplexer.Connect("localhost:6379,ssl=False,abortConnect=False").GetDatabase(), "UnitTest");
 
             var stopWatch = Stopwatch.StartNew();
 

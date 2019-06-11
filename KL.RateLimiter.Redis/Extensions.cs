@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace KL.RateLimiter.Redis
+namespace KL.RateLimiter
 {
     public static class Extensions
     {

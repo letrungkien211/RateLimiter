@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace KL.RateLimiter.Redis
+namespace KL.RateLimiter
 {
     internal class RedisRateLimiterQueue : IRateLimiterQueue
     {
