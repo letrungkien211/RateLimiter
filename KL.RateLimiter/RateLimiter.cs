@@ -24,7 +24,7 @@ namespace KL.RateLimiter
             else
             {
                 var oldest = await Queue.OldestAsync();
-                if (now - oldest < windowMillis)
+                if (oldest != null && now - oldest < windowMillis)
                 {
                     ret = true;
                 }
