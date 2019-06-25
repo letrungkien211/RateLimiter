@@ -19,13 +19,13 @@ namespace KL.RateLimiter
             return Database.ListLengthAsync(QueueName);
         }
 
-        public async Task<long?> OldestAsync()
+        public async Task<double?> OldestAsync()
         {
             var res = await Database.ListGetByIndexAsync(QueueName, -1);
-            return res.HasValue ? (long)res : (long?)null;
+            return res.HasValue ? (double)res : (double?)null;
         }
 
-        public Task PushAsync(long timestamp)
+        public Task PushAsync(double timestamp)
         {
             return Database.ListLeftPushAsync(QueueName, timestamp);
         }

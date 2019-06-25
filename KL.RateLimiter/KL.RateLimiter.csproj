@@ -14,6 +14,7 @@ Use KL.RateLimiter.Redis for distributed environment.
     <RepositoryUrl>https://github.com/letrungkien211/RateLimiter</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>rate,limit,api</PackageTags>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
 </Project>

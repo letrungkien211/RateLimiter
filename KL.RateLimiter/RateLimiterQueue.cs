@@ -11,18 +11,18 @@ namespace KL.RateLimiter
     /// </summary>
     public class RateLimiterQueue : IRateLimiterQueue
     {
-        private ConcurrentQueue<long> TimeStamps { get; } = new ConcurrentQueue<long>();
+        private ConcurrentQueue<double> TimeStamps { get; } = new ConcurrentQueue<double>();
 
         public async Task<long> LengthAsync()
         {
             return TimeStamps.Count;
         }
-        public async Task<long?> OldestAsync()
+        public async Task<double?> OldestAsync()
         {
-            return TimeStamps.TryPeek(out var ret) ? ret : (long?)null;
+            return TimeStamps.TryPeek(out var ret) ? ret : (double?)null;
         }
 
-        public async Task PushAsync(long timestamp)
+        public async Task PushAsync(double timestamp)
         {
             TimeStamps.Enqueue(timestamp);
         }

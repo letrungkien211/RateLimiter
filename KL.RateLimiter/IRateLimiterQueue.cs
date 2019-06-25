@@ -19,13 +19,13 @@ namespace KL.RateLimiter
         /// </summary>
         /// <param name="timestamp">timestamp in unix milliseconds</param>
         /// <returns></returns>
-        Task PushAsync(long timestamp);
+        Task PushAsync(double timestamp);
 
         /// <summary>
         /// Get the oldest member in the queue
         /// </summary>
         /// <returns>oldest timestamp in the queue</returns>
-        Task<long?> OldestAsync();
+        Task<double?> OldestAsync();
 
         /// <summary>
         /// Trim

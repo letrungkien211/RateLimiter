@@ -12,9 +12,9 @@ namespace KL.RateLimiter
             Queue = rateLimiterQueue;
         }
 
-        public async Task<(bool, long)> ReachLimitAsync(int windowMillis, int limit)
+        public async Task<(bool, long)> ReachLimitAsync(int windowMillis, int limit, double? unixTime = null)
         {
-            var now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            var now = unixTime ?? DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             var ret = false;
             var length = await Queue.LengthAsync();
             if (length < limit)
